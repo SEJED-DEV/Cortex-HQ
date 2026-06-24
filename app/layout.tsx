@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Space_Grotesk } from "next/font/google";
 import "./globals.css";
+import ContextMenu from "./components/ContextMenu";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -36,6 +37,7 @@ export default function RootLayout({
     <html lang="en" className={spaceGrotesk.variable}>
       <body className="min-h-screen bg-cortex-bg text-cortex-text antialiased">
         {children}
+        <ContextMenu />
       </body>
     </html>
   );
