@@ -171,6 +171,15 @@ export default function Privacy() {
         <section className="py-20 px-6">
           <div className="max-w-2xl mx-auto">
             <div className="text-center mb-10">
+              <div
+                className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6"
+                style={{ backgroundColor: "rgba(255,255,255,0.04)" }}
+              >
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                </svg>
+              </div>
               <h1 className="text-3xl font-bold tracking-tight text-white mb-3">
                 Privacy Policy
               </h1>
