@@ -12,6 +12,8 @@ const items: Item[] = [
   { label: "Bots", href: "#bots" },
   { label: "Services", href: "#services" },
   { label: "Support", href: "/support" },
+  { label: "Privacy", href: "/privacy" },
+  { label: "Terms", href: "/terms" },
   { label: "GitHub", href: "https://github.com/SEJED-DEV" },
 ];
 

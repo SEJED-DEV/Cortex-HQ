@@ -34,27 +34,25 @@ export default function Footer() {
             Home
           </a>
           <a
-            href="/servers"
+            href="/privacy"
             className="text-xs transition-colors"
             style={{ color: "rgba(255,255,255,0.3)" }}
           >
-            Servers
+            Privacy
           </a>
           <a
-            href="/premium"
+            href="/terms"
             className="text-xs transition-colors"
             style={{ color: "rgba(255,255,255,0.3)" }}
           >
-            Premium
+            Terms
           </a>
           <a
-            href="https://www.cortexhq.net"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/support"
             className="text-xs transition-colors"
             style={{ color: "rgba(255,255,255,0.3)" }}
           >
-            Website
+            Support
           </a>
         </div>
 

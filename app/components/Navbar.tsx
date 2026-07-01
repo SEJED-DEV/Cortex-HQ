@@ -109,6 +109,12 @@ export default function Navbar() {
           <MobileNavLink href="/support" onClick={() => setMobileOpen(false)}>
             Support
           </MobileNavLink>
+          <MobileNavLink href="/privacy" onClick={() => setMobileOpen(false)}>
+            Privacy
+          </MobileNavLink>
+          <MobileNavLink href="/terms" onClick={() => setMobileOpen(false)}>
+            Terms
+          </MobileNavLink>
           <MobileNavLink
             href="https://github.com/SEJED-DEV"
             onClick={() => setMobileOpen(false)}
