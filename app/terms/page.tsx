@@ -4,7 +4,7 @@ import { useState } from "react";
 import Navbar from "@/app/components/Navbar";
 import Footer from "@/app/components/Footer";
 
-const services = ["Website", "Cortex Bot", "Modmail Bot", "QuranBot"] as const;
+const services = ["Website", "Cortex Bot", "Modmail Bot"] as const;
 type Service = (typeof services)[number];
 
 interface Section {
@@ -114,41 +114,6 @@ const content: Record<Service, { title: string; updated: string; summary: string
       },
     ],
   },
-  QuranBot: {
-    title: "QuranBot Terms of Service",
-    updated: "April 17, 2026",
-    summary: "By using QuranBot, you agree to these terms. The bot is intended for religious, educational, and spiritual purposes.",
-    sections: [
-      {
-        heading: "Eligibility",
-        body: "To use QuranBot, you must be a registered Discord user, have necessary permissions to invite bots, be at least 13 years old, and use the bot primarily for religious, educational, or spiritual purposes.",
-      },
-      {
-        heading: "Acceptable Use",
-        body: "QuranBot is intended for religious, educational, and spiritual purposes. Prohibited uses include publishing offensive content, misusing bot functions to spam or disrupt services, reverse engineering beyond open-source license permissions, and using the bot for commercial purposes without explicit written permission.",
-      },
-      {
-        heading: "Intellectual Property",
-        body: "Religious content belongs to their original sources. Quran recitations are sourced from mp3quran.net, prayer time data from aladhan.com, and azkar content from publicly available Islamic resources. QuranBot software is open-source under the MIT License.",
-      },
-      {
-        heading: "Disclaimer",
-        body: "QuranBot is provided 'as is' without warranties of any kind. We are not responsible for Discord outages, API failures, or third-party infrastructure issues.",
-      },
-      {
-        heading: "Termination",
-        body: "You may remove QuranBot from your server at any time. We may suspend or ban access for violations of these terms or Discord policies.",
-      },
-      {
-        heading: "Full Terms",
-        body: 'For the complete QuranBot terms of service, visit quranbot.cortexhq.net.',
-      },
-    ],
-  },
-};
-
-const externalLinks: Partial<Record<Service, string>> = {
-  QuranBot: "https://quranbot.cortexhq.net/site/terms",
 };
 
 export default function Terms() {
@@ -241,24 +206,7 @@ export default function Terms() {
                 ))}
               </div>
 
-              {externalLinks[active] && (
-                <div className="mt-8 pt-6 text-center" style={{ borderTop: "1px solid var(--color-border)" }}>
-                  <a
-                    href={externalLinks[active]}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-sm font-medium transition-colors"
-                    style={{ color: "var(--color-cortex-400)" }}
-                  >
-                    View full terms on quranbot.cortexhq.net
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                      <polyline points="15 3 21 3 21 9" />
-                      <line x1="10" y1="14" x2="21" y2="3" />
-                    </svg>
-                  </a>
-                </div>
-              )}
+
             </div>
 
             <div className="mt-8 text-center">

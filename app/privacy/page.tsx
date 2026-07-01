@@ -4,7 +4,7 @@ import { useState } from "react";
 import Navbar from "@/app/components/Navbar";
 import Footer from "@/app/components/Footer";
 
-const services = ["Website", "Cortex Bot", "Modmail Bot", "QuranBot"] as const;
+const services = ["Website", "Cortex Bot", "Modmail Bot"] as const;
 type Service = (typeof services)[number];
 
 interface Section {
@@ -118,45 +118,6 @@ const content: Record<Service, { title: string; updated: string; summary: string
       },
     ],
   },
-  QuranBot: {
-    title: "QuranBot Privacy Policy",
-    updated: "May 20, 2026",
-    summary: "QuranBot operates on a privacy-first, data-minimization principle. We process only what is strictly necessary for core functionality.",
-    sections: [
-      {
-        heading: "Information We Collect",
-        body: "Server identifiers (Guild ID, Owner ID) for configuration mapping, user metadata (User ID, Username) strictly for functionality, channel references for voice and azkar automation, playback state and reciter selection per guild, and basic aggregated telemetry for stability monitoring.",
-      },
-      {
-        heading: "What We Don't Collect",
-        body: "We explicitly do not collect message content, attachments, or voice data beyond functional triggers. We do not collect sensitive personal data (email, phone, IP address, real name), payment information, biometric data, browsing history, or cross-application tracking data.",
-      },
-      {
-        heading: "Data Storage",
-        body: "Guild setup data persists only while the bot remains in the server. Firebase is used for persistent storage of guild settings and Redis for fast-access state management. Local backups are destroyed after successful delivery.",
-      },
-      {
-        heading: "Third-Party Services",
-        body: "QuranBot integrates with Discord API, Firebase, Redis, Lavalink for audio streaming, mp3quran.net for Quran recitations, and aladhan.com for prayer time data. Each service has its own privacy policy.",
-      },
-      {
-        heading: "Data Retention",
-        body: "Voluntary feedback data is retained until the reported issue is resolved. Guild setup data persists only while the bot remains in the server. Data for departed guilds is cleaned through maintenance cycles. Admin access logs are retained for a defined audit period then purged.",
-      },
-      {
-        heading: "Your Rights",
-        body: "You may request a summary of stored data for your guild, request immediate deletion via our support server or in-bot complaint system, disable automated features by adjusting channel settings, and update inaccurate guild settings through bot commands.",
-      },
-      {
-        heading: "Full Policy",
-        body: 'For the complete QuranBot privacy policy, visit quranbot.cortexhq.net.',
-      },
-    ],
-  },
-};
-
-const externalLinks: Partial<Record<Service, string>> = {
-  QuranBot: "https://quranbot.cortexhq.net/site/privacy",
 };
 
 export default function Privacy() {
@@ -246,24 +207,7 @@ export default function Privacy() {
                 ))}
               </div>
 
-              {externalLinks[active] && (
-                <div className="mt-8 pt-6 text-center" style={{ borderTop: "1px solid var(--color-border)" }}>
-                  <a
-                    href={externalLinks[active]}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-sm font-medium transition-colors"
-                    style={{ color: "var(--color-cortex-400)" }}
-                  >
-                    View full policy on quranbot.cortexhq.net
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                      <polyline points="15 3 21 3 21 9" />
-                      <line x1="10" y1="14" x2="21" y2="3" />
-                    </svg>
-                  </a>
-                </div>
-              )}
+
             </div>
 
             <div className="mt-8 text-center">
