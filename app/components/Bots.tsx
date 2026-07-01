@@ -50,63 +50,69 @@ const bots = [
 
 export default function Bots() {
   return (
-    <section id="bots" className="py-32 px-6">
+    <section id="bots" className="py-32 px-6" style={{ background: "#0a0a0a" }}>
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-20">
-          <span className="inline-block text-xs font-semibold tracking-[0.2em] uppercase text-cortex-muted mb-4">
+          <span
+            className="inline-block text-[10px] uppercase tracking-[0.15em] font-semibold mb-4"
+            style={{
+              color: "rgba(255,255,255,0.3)",
+              fontFamily: "var(--font-mono)",
+            }}
+          >
             Ecosystem
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-cortex-text">
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white">
             Our Bots
           </h2>
-          <div className="w-12 h-0.5 bg-cortex-text/20 mx-auto mt-6" />
+          <div
+            className="w-12 h-0.5 mx-auto mt-6"
+            style={{ backgroundColor: "rgba(255,255,255,0.1)" }}
+          />
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">
           {bots.map((bot) => (
             <div
               key={bot.name}
-              className={`group relative bg-white border border-cortex-border rounded-2xl p-8 flex flex-col transition-all duration-300 hover:shadow-xl hover:shadow-black/5 hover:-translate-y-1 ${
+              className={`group relative rounded-2xl p-8 flex flex-col transition-all duration-300 hover:-translate-y-1 ${
                 bot.featured
                   ? "md:col-span-3 md:grid md:grid-cols-2 md:gap-12 md:p-12"
                   : ""
               }`}
+              style={{
+                background: "rgba(255,255,255,0.02)",
+                border: "1px solid var(--color-border)",
+              }}
             >
               {bot.featured && (
-                <span className="absolute -top-3 left-8 px-4 py-1 text-xs font-semibold tracking-wide text-white bg-cortex-text rounded-full">
+                <span
+                  className="absolute -top-3 left-8 px-4 py-1 text-xs font-semibold tracking-wide text-white rounded-full"
+                  style={{
+                    background: "var(--color-cortex-400)",
+                  }}
+                >
                   Featured
                 </span>
               )}
-              {bot.name === "Modmail Bot" && (
-                <span className="absolute -top-3 left-8 px-4 py-1 text-xs font-semibold tracking-wide text-white bg-red-500/80 rounded-full">
-                  Closing Soon
-                </span>
-              )}
-
               <div>
-                <h3 className="text-2xl font-bold tracking-tight mb-2">
+                <h3 className="text-2xl font-bold tracking-tight mb-2 text-white">
                   {bot.name}
                 </h3>
-                <p className="text-sm text-cortex-muted mb-5">
+                <p className="text-sm mb-5" style={{ color: "#a0a0a0" }}>
                   {bot.tagline}
                 </p>
-                <p className="text-sm text-cortex-muted/80 leading-relaxed mb-6">
+                <p className="text-sm leading-relaxed mb-6" style={{ color: "rgba(255,255,255,0.4)" }}>
                   {bot.description}
                 </p>
-                {bot.name === "Modmail Bot" && (
-                  <p className="text-xs text-red-400 mb-4">
-                    This service will be shutting down in the coming months.
-                  </p>
-                )}
-
                 <a
                   href={bot.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`inline-flex items-center gap-2.5 px-6 py-3 text-sm font-semibold rounded-full transition-all ${
+                  className={`inline-flex items-center gap-2.5 px-6 py-3 text-sm font-semibold rounded-md transition-all ${
                     bot.featured
-                      ? "text-white bg-cortex-text hover:bg-cortex-text/90"
-                      : "text-cortex-text bg-cortex-border/50 hover:bg-cortex-border"
+                      ? "text-black bg-white hover:bg-white/90"
+                      : "text-white bg-white/10 hover:bg-white/[0.15]"
                   }`}
                 >
                   {bot.cta}
@@ -126,22 +132,28 @@ export default function Bots() {
               </div>
 
               <div className={bot.featured ? "mt-10 md:mt-0" : "mt-8"}>
-                <span className="text-xs font-semibold tracking-widest uppercase text-cortex-muted/60 mb-4 block">
+                <span
+                  className="text-[10px] uppercase tracking-[0.12em] font-semibold mb-4 block"
+                  style={{
+                    color: "rgba(255,255,255,0.3)",
+                    fontFamily: "var(--font-mono)",
+                  }}
+                >
                   Features
                 </span>
                 <ul className="space-y-3">
                   {bot.features.map((f) => (
-                    <li
-                      key={f}
-                      className="flex items-center gap-3 text-sm"
-                    >
-                      <span className="w-5 h-5 rounded-full bg-cortex-text/5 flex items-center justify-center shrink-0">
+                    <li key={f} className="flex items-center gap-3 text-sm" style={{ color: "rgba(255,255,255,0.6)" }}>
+                      <span
+                        className="w-5 h-5 rounded-full flex items-center justify-center shrink-0"
+                        style={{ backgroundColor: "rgba(255,255,255,0.06)" }}
+                      >
                         <svg
                           width="10"
                           height="10"
                           viewBox="0 0 24 24"
                           fill="none"
-                          stroke="#1a1a2e"
+                          stroke="rgba(255,255,255,0.6)"
                           strokeWidth="3"
                           strokeLinecap="round"
                           strokeLinejoin="round"

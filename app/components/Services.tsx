@@ -47,26 +47,39 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="services" className="py-32 px-6 bg-cortex-border/20">
+    <section
+      id="services"
+      className="py-32 px-6"
+      style={{ background: "#0f0f10" }}
+    >
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-20">
-          <span className="inline-block text-xs font-semibold tracking-[0.2em] uppercase text-cortex-muted mb-4">
+          <span
+            className="inline-block text-[10px] uppercase tracking-[0.15em] font-semibold mb-4"
+            style={{
+              color: "rgba(255,255,255,0.3)",
+              fontFamily: "var(--font-mono)",
+            }}
+          >
             Open Source
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-cortex-text">
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white">
             Services
           </h2>
-          <div className="w-12 h-0.5 bg-cortex-text/20 mx-auto mt-6" />
+          <div
+            className="w-12 h-0.5 mx-auto mt-6"
+            style={{ backgroundColor: "rgba(255,255,255,0.1)" }}
+          />
         </div>
 
         <div className="grid md:grid-cols-2 gap-12">
           {services.map((service) => (
             <div key={service.name}>
               <div className="mb-8">
-                <h3 className="text-xl font-bold tracking-tight mb-2">
+                <h3 className="text-xl font-bold tracking-tight mb-2 text-white">
                   {service.name}
                 </h3>
-                <p className="text-sm text-cortex-muted/80 leading-relaxed">
+                <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.4)" }}>
                   {service.description}
                 </p>
               </div>
@@ -78,17 +91,29 @@ export default function Services() {
                     href={item.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group block bg-white border border-cortex-border rounded-xl p-6 transition-all duration-300 hover:shadow-lg hover:shadow-black/5 hover:-translate-y-0.5"
+                    className="group block rounded-xl p-6 transition-all duration-300 hover:-translate-y-0.5"
+                    style={{
+                      background: "rgba(255,255,255,0.02)",
+                      border: "1px solid var(--color-border)",
+                    }}
                   >
                     <div className="flex items-start justify-between gap-4">
                       <div className="flex-1 min-w-0">
                         <div className="flex items-center gap-2.5 mb-1.5">
-                          <span className="w-2 h-2 rounded-full bg-cortex-text/20 group-hover:bg-cortex-text transition-colors" />
-                          <h4 className="font-semibold text-sm tracking-wide">
+                          <span
+                            className="w-2 h-2 rounded-full transition-colors"
+                            style={{
+                              backgroundColor: "rgba(255,255,255,0.2)",
+                            }}
+                          />
+                          <h4 className="font-semibold text-sm tracking-wide text-white">
                             {item.label}
                           </h4>
                         </div>
-                        <p className="text-sm text-cortex-muted/70 leading-relaxed pl-5">
+                        <p
+                          className="text-sm leading-relaxed pl-5"
+                          style={{ color: "rgba(255,255,255,0.4)" }}
+                        >
                           {item.desc}
                         </p>
                       </div>
@@ -97,7 +122,7 @@ export default function Services() {
                         height="16"
                         viewBox="0 0 24 24"
                         fill="none"
-                        stroke="#1a1a2e"
+                        stroke="rgba(255,255,255,0.4)"
                         strokeWidth="2"
                         strokeLinecap="round"
                         strokeLinejoin="round"

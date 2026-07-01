@@ -8,12 +8,12 @@ export default function Page() {
   return (
     <>
       <Navbar />
-      <main>
+      <main className="flex-1">
         <Hero />
         <Bots />
         <Services />
-        <Footer />
       </main>
+      <Footer />
     </>
   );
 }

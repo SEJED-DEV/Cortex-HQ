@@ -1,22 +1,26 @@
 import type { Metadata } from "next";
-import { Space_Grotesk } from "next/font/google";
+import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
-import ContextMenu from "./components/ContextMenu";
 
-const spaceGrotesk = Space_Grotesk({
+const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-space",
+  variable: "--font-sans",
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://cortexhq.net"),
-  title: "Cortex HQ — Next-Gen Discord Infrastructure",
+  title: "Cortex HQ",
   description:
-    "Cortex HQ delivers premium Discord bots, moderation tools, and community infrastructure for modern communities.",
+    "Infrastructure for modern Discord communities.",
   openGraph: {
-    title: "Cortex HQ — Next-Gen Discord Infrastructure",
+    title: "Cortex HQ",
     description:
-      "Cortex HQ delivers premium Discord bots, moderation tools, and community infrastructure for modern communities.",
+      "Infrastructure for modern Discord communities.",
     images: [
       {
         url: "/thubnail.png",
@@ -34,10 +38,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={spaceGrotesk.variable}>
-      <body className="min-h-screen bg-cortex-bg text-cortex-text antialiased">
+    <html
+      lang="en"
+      className={`${inter.variable} ${jetbrainsMono.variable} antialiased`}
+    >
+      <body className="flex min-h-screen flex-col font-sans">
         {children}
-        <ContextMenu />
       </body>
     </html>
   );
