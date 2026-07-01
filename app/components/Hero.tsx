@@ -98,23 +98,6 @@ export default function Hero() {
                 style={{ backgroundColor: "var(--color-cortex-400)" }}
               />
               <div className="pl-5 pr-5 py-4">
-                <div className="flex items-center gap-2 mb-3">
-                  <span
-                    className="text-[10px]"
-                    style={{ color: "var(--color-cortex-400)" }}
-                  >
-                    &#9670;
-                  </span>
-                  <h3
-                    className="text-[10px] uppercase tracking-[0.12em] font-semibold"
-                    style={{
-                      color: "rgba(255,255,255,0.7)",
-                      fontFamily: "var(--font-mono)",
-                    }}
-                  >
-                    Quick Stats
-                  </h3>
-                </div>
                 <LiveMetrics />
               </div>
             </div>
