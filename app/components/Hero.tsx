@@ -1,7 +1,3 @@
-import dynamic from "next/dynamic";
-
-const LiveMetrics = dynamic(() => import("./LiveMetrics"), { ssr: false });
-
 export default function Hero() {
   return (
     <section
@@ -12,7 +8,7 @@ export default function Hero() {
           "linear-gradient(90deg, #070708 0%, #0a0a0a 45%, color-mix(in oklab, #6366f1 20%, #0a0a0a) 72%, color-mix(in oklab, #6366f1 40%, #070708) 100%)",
       }}
     >
-      <div className="flex-1 grid grid-cols-1 lg:grid-cols-[1.55fr_0.95fr]">
+      <div className="flex-1 grid grid-cols-1">
         {/* Left Column */}
         <div
           className="flex flex-col justify-center px-5 sm:px-8 lg:px-16 py-8 sm:py-0"
@@ -75,30 +71,6 @@ export default function Hero() {
                 >
                   Explore Bots
                 </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Right Column — Quick Stats */}
-        <div className="hidden lg:flex flex-col justify-center px-8">
-          <div
-            className="animate-fade-up"
-            style={{ animationDelay: "0.15s" }}
-          >
-            <div
-              className="relative rounded-md border overflow-hidden"
-              style={{
-                borderColor: "var(--color-border)",
-                backgroundColor: "rgba(255,255,255,0.02)",
-              }}
-            >
-              <div
-                className="absolute left-0 top-0 bottom-0 w-[3px]"
-                style={{ backgroundColor: "var(--color-cortex-400)" }}
-              />
-              <div className="pl-5 pr-5 py-4">
-                <LiveMetrics />
               </div>
             </div>
           </div>
