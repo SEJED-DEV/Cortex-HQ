@@ -1,35 +1,32 @@
 import type { Metadata } from "next";
-import { Inter, JetBrains_Mono } from "next/font/google";
+import { JetBrains_Mono } from "next/font/google";
 import "./globals.css";
-import ContextMenu from "./components/ContextMenu";
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-sans",
-});
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
-  variable: "--font-mono",
+  variable: "--font-sans",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://cortexhq.net"),
-  title: "Cortex HQ",
-  description:
-    "Infrastructure for modern Discord communities.",
+  title: {
+    default: "Cortex HQ",
+    template: "%s | Cortex HQ",
+  },
+  description: "Infrastructure for modern Discord communities.",
   openGraph: {
     title: "Cortex HQ",
-    description:
-      "Infrastructure for modern Discord communities.",
-    images: [
-      {
-        url: "/thubnail.png",
-        width: 1200,
-        height: 630,
-        alt: "Cortex HQ",
-      },
-    ],
+    description: "Infrastructure for modern Discord communities.",
+    siteName: "Cortex HQ",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Cortex HQ",
+    description: "Infrastructure for modern Discord communities.",
+  },
+  icons: {
+    icon: "/favicon.ico",
   },
 };
 
@@ -39,13 +36,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html
-      lang="en"
-      className={`${inter.variable} ${jetbrainsMono.variable} antialiased`}
-    >
-      <body className="flex min-h-screen flex-col font-sans">
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${jetbrainsMono.variable} font-sans antialiased`}>
         {children}
-        <ContextMenu />
       </body>
     </html>
   );

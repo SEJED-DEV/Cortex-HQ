@@ -1,11 +1,11 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
+import type { NextRequest } from "next/server";
 
-export function middleware(req: NextRequest) {
-  const host = req.headers.get("host") || "";
-  const { pathname } = req.nextUrl;
+export function middleware(request: NextRequest) {
+  const { hostname, pathname } = new URL(request.url);
 
-  if (host.startsWith("support.") && !pathname.startsWith("/support")) {
-    return NextResponse.rewrite(new URL("/support", req.url));
+  if (hostname.startsWith("support.")) {
+    return NextResponse.rewrite(new URL("/support", request.url));
   }
 
   return NextResponse.next();
