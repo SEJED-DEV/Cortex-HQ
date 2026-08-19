@@ -70,9 +70,9 @@ const FALLBACK = [
 
 function primaryRole(member: TeamMember): { id: string; label: string; color: string } | null {
   for (const id of ROLE_PRIORITY) {
-    if (member.roles.some((r) => r.id === id)) {
-      const def = ROLE_MAP[id];
-      if (def) return { id, label: def.label, color: def.color };
+    const matched = member.roles.find((r) => r.id === id);
+    if (matched) {
+      return { id, label: matched.name, color: matched.color };
     }
   }
   return null;
@@ -280,7 +280,8 @@ export function TeamGrid({ preview = false }: { preview?: boolean }) {
       )}
 
       {grouped.map(({ group, members }) => {
-        const groupColor = ROLE_MAP[group.roles[0]]?.color || "#94a3b8";
+        const firstRole = members[0]?.roles.find((r) => group.roles.includes(r.id));
+        const groupColor = firstRole?.color || ROLE_MAP[group.roles[0]]?.color || "#94a3b8";
         return (
           <div key={group.key} className="mb-10 last:mb-0">
             <div className="mb-5 flex items-center gap-3">
