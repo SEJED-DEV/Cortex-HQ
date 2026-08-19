@@ -254,10 +254,16 @@ export function TeamGrid({ preview = false }: { preview?: boolean }) {
     return aIdx - bIdx;
   });
 
-  const grouped = GROUPS.map((group) => ({
-    group,
-    members: sorted.filter((m) => m.roles.some((r) => group.roles.includes(r.id))),
-  })).filter((entry) => entry.members.length > 0);
+  const assigned = new Map<string, TeamMember[]>();
+  for (const m of sorted) {
+    const g = groupFor(m);
+    if (!g) continue;
+    if (!assigned.has(g.key)) assigned.set(g.key, []);
+    assigned.get(g.key)!.push(m);
+  }
+  const grouped = GROUPS
+    .filter((g) => assigned.has(g.key))
+    .map((g) => ({ group: g, members: assigned.get(g.key)! }));
 
   if (grouped.length === 0) return null;
 
