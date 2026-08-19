@@ -8,7 +8,7 @@ interface SectionProps extends HTMLAttributes<HTMLElement> {
 
 export function Section({ className, size = "lg", children, ...props }: SectionProps) {
   return (
-    <section className={cn("py-16 md:py-24", className)} {...props}>
+    <section className={cn("py-20 pt-28 md:py-28 md:pt-36", className)} {...props}>
       <Container size={size === "lg" ? "lg" : size === "md" ? "md" : "sm"}>
         {children}
       </Container>
@@ -17,14 +17,14 @@ export function Section({ className, size = "lg", children, ...props }: SectionP
 }
 
 export function SectionHeader({ className, ...props }: HTMLAttributes<HTMLDivElement>) {
-  return <div className={cn("mb-12 max-w-2xl", className)} {...props} />;
+  return <div className={cn("mb-14 max-w-2xl", className)} {...props} />;
 }
 
 export function SectionLabel({ className, ...props }: HTMLAttributes<HTMLSpanElement>) {
   return (
     <span
       className={cn(
-        "mb-4 block text-[11px] font-medium uppercase tracking-[0.2em] text-cortex-400",
+        "mb-4 block text-xs font-medium uppercase tracking-[0.2em] text-[var(--color-muted)]",
         className,
       )}
       {...props}
@@ -36,7 +36,7 @@ export function SectionTitle({ className, ...props }: HTMLAttributes<HTMLHeading
   return (
     <h2
       className={cn(
-        "text-3xl font-bold tracking-tight text-[rgb(var(--color-fg))] sm:text-4xl",
+        "text-3xl font-bold tracking-tight text-white sm:text-4xl",
         className,
       )}
       {...props}
@@ -48,7 +48,7 @@ export function SectionDescription({ className, ...props }: HTMLAttributes<HTMLP
   return (
     <p
       className={cn(
-        "mt-4 text-lg text-[rgb(var(--color-muted))]",
+        "mt-4 text-lg text-[var(--color-muted)]",
         className,
       )}
       {...props}

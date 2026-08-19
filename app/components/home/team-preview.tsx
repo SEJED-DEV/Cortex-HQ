@@ -17,10 +17,10 @@ export function TeamPreview() {
 
       <TeamGrid preview />
 
-      <div className="mt-10 text-center">
+      <div className="mt-12 text-center">
         <Link href="/team">
-          <Button variant="outline">
-            View full team <ArrowRight className="ml-2 h-4 w-4" />
+          <Button variant="secondary" className="group">
+            View full team <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-0.5" />
           </Button>
         </Link>
       </div>

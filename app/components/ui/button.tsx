@@ -12,14 +12,14 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       <button
         ref={ref}
         className={cn(
-          "inline-flex items-center justify-center rounded-md font-medium transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-cortex-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[rgb(var(--color-bg))] disabled:pointer-events-none disabled:opacity-50 active:scale-[0.98]",
-          variant === "primary" && "bg-[#ededed] text-[#070708] hover:bg-cortex-400",
-          variant === "secondary" && "bg-surface-200 text-[rgb(var(--color-fg))] hover:bg-surface-300",
-          variant === "ghost" && "text-[rgb(var(--color-muted))] hover:bg-surface-200 hover:text-[rgb(var(--color-fg))]",
-          variant === "outline" && "border border-[rgb(var(--color-border))] text-[rgb(var(--color-fg))] hover:border-cortex-400 hover:text-cortex-400",
-          size === "sm" && "h-8 px-3 text-xs",
-          size === "md" && "h-9 px-4 text-sm",
-          size === "lg" && "h-11 px-5 text-sm",
+          "inline-flex items-center justify-center gap-2 rounded-xl font-medium transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg)] disabled:pointer-events-none disabled:opacity-50 active:scale-[0.97]",
+          variant === "primary" && "bg-white text-[#070708] font-semibold hover:bg-white/90 hover:shadow-[0_0_30px_rgba(255,255,255,0.12)]",
+          variant === "secondary" && "bg-white/[0.06] text-white border border-white/[0.06] hover:bg-white/[0.1] hover:border-white/[0.12]",
+          variant === "ghost" && "text-[var(--color-muted)] hover:bg-white/[0.06] hover:text-white",
+          variant === "outline" && "border border-white/[0.06] text-white hover:border-white/[0.12] hover:bg-white/[0.03]",
+          size === "sm" && "h-8 px-3 text-xs rounded-lg",
+          size === "md" && "h-10 px-5 text-sm",
+          size === "lg" && "h-12 px-6 text-sm",
           className,
         )}
         {...props}
